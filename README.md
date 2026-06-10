@@ -14,23 +14,28 @@ shows the current pose and a trail of image-bearing keyframe frustums.
 | `visualizer.py` | viser frustum-history visualizer |
 | `run.py` | Entry point + tracking loop |
 
-## Dependencies
+## Setup
 
-This repo does **not** vendor the ORB-SLAM3 Python bindings. Clone and install
-them into the workspace separately:
+The devcontainer handles all dependency installation — the Dockerfile bakes in
+`pyrealsense2`, `numpy`, `scipy`, and `viser`, and `postCreateCommand` runs
+`uv pip install -e ./orbslam3-python`.
+
+**Because that install runs during container creation, you must clone the
+ORB-SLAM3 bindings into the workspace _before_ opening the devcontainer:**
 
 ```bash
 git clone https://github.com/Robaire/orbslam3-python.git
-uv pip install -e ./orbslam3-python
-uv pip install pyrealsense2 numpy scipy viser
 ```
+
+Then open the folder in VS Code and **Reopen in Container**. (This repo does not
+vendor `orbslam3-python`; it's installed editable from your local clone.)
 
 You also need the ORB-SLAM3 vocabulary file `ORBvoc.txt` (ships with ORB-SLAM3
 under `Vocabulary/`, usually gzipped — decompress it). Point `Config.vocab` at
 its path.
 
-A USB3 connection is required for dual IR @ 640x480x30. Inside a devcontainer,
-the camera needs USB privileges (see `.devcontainer/`).
+A USB3 connection is required for dual IR @ 640x480x30; USB privileges are
+already set in the devcontainer config.
 
 ## Run
 
