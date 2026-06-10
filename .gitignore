@@ -1,0 +1,18 @@
+# ORB-SLAM3 Python bindings — installed separately, see README
+orbslam3-python/
+
+# Generated at runtime (camera-specific)
+d435_stereo.yaml
+
+# Vocabulary file is large; download separately (see README)
+ORBvoc.txt
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# OS / editor cruft
+.DS_Store

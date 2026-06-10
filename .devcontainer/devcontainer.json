@@ -1,0 +1,23 @@
+{
+    "name": "ORB-SLAM3 Ubuntu 22.04",
+    "build": { "dockerfile": "Dockerfile" },
+    "runArgs": [
+        "--privileged",
+        "-v", "/dev/bus/usb:/dev/bus/usb"
+    ],
+    "forwardPorts": [8080],
+    "postCreateCommand": "uv pip install -e ./orbslam3-python",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-vscode.cpptools",
+                "ms-vscode.cmake-tools"
+            ],
+            "settings": {
+                "python.defaultInterpreterPath": "/home/vscode/.venv/bin/python"
+            }
+        }
+    },
+    "remoteUser": "vscode"
+}
