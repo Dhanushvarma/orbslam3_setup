@@ -1,6 +1,3 @@
-# ORB-SLAM3 Python bindings — installed separately, see README
-orbslam3-python/
-
 # Generated at runtime (camera-specific)
 d435_stereo.yaml
 
