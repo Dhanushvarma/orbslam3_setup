@@ -16,19 +16,7 @@ shows the current pose and a trail of image-bearing keyframe frustums.
 
 ## Setup
 
-The devcontainer handles all dependency installation — the Dockerfile bakes in
-`pyrealsense2`, `numpy`, `scipy`, and `viser`, and `postCreateCommand` runs
-`uv pip install -e ./orbslam3-python`.
-
-**Because that install runs during container creation, you must clone the
-ORB-SLAM3 bindings into the workspace _before_ opening the devcontainer:**
-
-```bash
-git clone https://github.com/Robaire/orbslam3-python.git
-```
-
-Then open the folder in VS Code and **Reopen in Container**. (This repo does not
-vendor `orbslam3-python`; it's installed editable from your local clone.)
+The devcontainer handles all dependency installation.Open the folder in VS Code and **Reopen in Container**.
 
 You also need the ORB-SLAM3 vocabulary file `ORBvoc.txt` (ships with ORB-SLAM3
 under `Vocabulary/`, usually gzipped — decompress it). Point `Config.vocab` at
